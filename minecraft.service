@@ -1,0 +1,15 @@
+[Unit]
+Description=Spencers minecraft server daemon
+After=network.target
+
+[Service]
+User=mc
+Group=mc
+WorkingDirectory=/home/minecraft/spencers
+ExecStart=/usr/bin/java -jar /home/minecraft/spencers/paper.jar nogui
+KillMode=process
+RestartSec=10s
+TimeoutSec=90
+
+[Install]
+WantedBy=multi-user.target
